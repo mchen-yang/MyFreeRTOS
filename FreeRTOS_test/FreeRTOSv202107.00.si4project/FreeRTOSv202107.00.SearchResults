@@ -1,0 +1,126 @@
+---- configSUPPORT_STATIC_ALLOCATION Matches (127 in 30 files) ----
+prvTestAbortingEventGroupWait in AbortDelay.c (FreeRTOS\Demo\Common\Minimal) :         #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+prvTestAbortingEventGroupWait in AbortDelay.c (FreeRTOS\Demo\Common\Minimal) :         #endif /* if ( configSUPPORT_STATIC_ALLOCATION == 1 ) */
+prvTestAbortingStreamBufferReceive in AbortDelay.c (FreeRTOS\Demo\Common\Minimal) :         #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+prvTestAbortingStreamBufferReceive in AbortDelay.c (FreeRTOS\Demo\Common\Minimal) :         #else /* if ( configSUPPORT_STATIC_ALLOCATION == 1 ) */
+prvTestAbortingStreamBufferReceive in AbortDelay.c (FreeRTOS\Demo\Common\Minimal) :         #endif /* if ( configSUPPORT_STATIC_ALLOCATION == 1 ) */
+prvTestAbortingQueueSend in AbortDelay.c (FreeRTOS\Demo\Common\Minimal) :         #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+prvTestAbortingQueueSend in AbortDelay.c (FreeRTOS\Demo\Common\Minimal) :         #endif /* if ( configSUPPORT_STATIC_ALLOCATION == 1 ) */
+prvTestAbortingSemaphoreTake in AbortDelay.c (FreeRTOS\Demo\Common\Minimal) :         #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+Configurations.json (FreeRTOS\Test\CBMC\proofs\Queue\QueueGenericCreate) line 60 :         "configSUPPORT_STATIC_ALLOCATION=1",
+Configurations.json (FreeRTOS\Test\CBMC\proofs\Queue\QueueGenericCreate) line 74 :         "configSUPPORT_STATIC_ALLOCATION=1",
+Configurations.json (FreeRTOS\Test\CBMC\proofs\Queue\QueueGenericCreate) line 87 :         "configSUPPORT_STATIC_ALLOCATION=0",
+Configurations.json (FreeRTOS\Test\CBMC\proofs\Queue\QueueGenericCreate) line 100 :         "configSUPPORT_STATIC_ALLOCATION=1",
+Configurations.json (FreeRTOS\Test\CBMC\proofs\Queue\QueueGenericCreateStatic) line 54 :         "configSUPPORT_STATIC_ALLOCATION=1",
+Configurations.json (FreeRTOS\Test\CBMC\proofs\Queue\QueueGenericCreateStatic) line 64 :         "configSUPPORT_STATIC_ALLOCATION=1",
+Configurations.json (FreeRTOS\Test\CBMC\proofs\Queue\QueueGiveFromISR) line 48 :         "configSUPPORT_STATIC_ALLOCATION=1",
+Configurations.json (FreeRTOS\Test\CBMC\proofs\Queue\QueueGiveFromISR) line 58 :         "configSUPPORT_STATIC_ALLOCATION=1",
+xQueueGenericCreate in create.c (FreeRTOS\Test\VeriFast\queue) :         #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+xQueueGenericCreate in create.c (FreeRTOS\Test\VeriFast\queue) :         #endif /* configSUPPORT_STATIC_ALLOCATION */
+event_groups.c (FreeRTOS\Source) line 73 :     #if ( ( configSUPPORT_STATIC_ALLOCATION == 1 ) && ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) )
+prvTestWaitCondition in event_groups.c (FreeRTOS\Source) : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+event_groups.c (FreeRTOS\Source) line 143 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+xEventGroupCreate in event_groups.c (FreeRTOS\Source) :             #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+xEventGroupCreate in event_groups.c (FreeRTOS\Source) :             #endif /* configSUPPORT_STATIC_ALLOCATION */
+vEventGroupDelete in event_groups.c (FreeRTOS\Source) :         #if ( ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 0 ) )
+vEventGroupDelete in event_groups.c (FreeRTOS\Source) :         #elif ( ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 1 ) )
+event_groups.h (FreeRTOS\Source\include) line 202 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+FreeRTOS.h (FreeRTOS\Source\include) line 891 : #ifndef configSUPPORT_STATIC_ALLOCATION
+FreeRTOS.h (FreeRTOS\Source\include) line 893 :     #define configSUPPORT_STATIC_ALLOCATION    0
+FreeRTOS.h (FreeRTOS\Source\include) line 923 : #if ( ( configSUPPORT_STATIC_ALLOCATION == 0 ) && ( configSUPPORT_DYNAMIC_ALLOCATION == 0 ) )
+FreeRTOS.h (FreeRTOS\Source\include) line 924 :     #error configSUPPORT_STATIC_ALLOCATION and configSUPPORT_DYNAMIC_ALLOCATION cannot both be 0, but can both be 1.
+FreeRTOS.h (FreeRTOS\Source\include) line 1081 :  * configSUPPORT_DYNAMIC_ALLOCATION and configSUPPORT_STATIC_ALLOCATION and
+FreeRTOS.h (FreeRTOS\Source\include) line 1107 :     ( ( ( portUSING_MPU_WRAPPERS == 0 ) && ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 1 ) ) || \
+FreeRTOS.h (FreeRTOS\Source\include) line 1249 :     #if ( ( configSUPPORT_STATIC_ALLOCATION == 1 ) && ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) )
+FreeRTOS.h (FreeRTOS\Source\include) line 1287 :     #if ( ( configSUPPORT_STATIC_ALLOCATION == 1 ) && ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) )
+FreeRTOSConfig.h (FreeRTOS\Test\CBMC\patches) line 93 : #ifndef configSUPPORT_STATIC_ALLOCATION
+FreeRTOSConfig.h (FreeRTOS\Test\CBMC\patches) line 94 :     #define configSUPPORT_STATIC_ALLOCATION     1
+FreeRTOSConfig.h (FreeRTOS\Test\CMock\config) line 67 : #define configSUPPORT_STATIC_ALLOCATION                  1
+FreeRTOSConfig.h (FreeRTOS\Test\CMock\queue\dynamic) line 67 : #define configSUPPORT_STATIC_ALLOCATION                  0
+FreeRTOSConfig.h (FreeRTOS\Test\CMock\queue\generic) line 67 : #define configSUPPORT_STATIC_ALLOCATION                  1
+FreeRTOSConfig.h (FreeRTOS\Test\CMock\queue\semaphore) line 67 : #define configSUPPORT_STATIC_ALLOCATION                  1
+FreeRTOSConfig.h (FreeRTOS\Test\CMock\queue\sets) line 67 : #define configSUPPORT_STATIC_ALLOCATION                  1
+FreeRTOSConfig.h (FreeRTOS\Test\CMock\queue\static) line 67 : #define configSUPPORT_STATIC_ALLOCATION                  1
+FreeRTOSConfig.h (FreeRTOS\Test\CMock\queue\tracing) line 67 : #define configSUPPORT_STATIC_ALLOCATION                  1
+MessageBufferDemo.c (FreeRTOS\Demo\Common\Minimal) line 89 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+MessageBufferDemo.c (FreeRTOS\Demo\Common\Minimal) line 100 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+vStartMessageBufferTasks in MessageBufferDemo.c (FreeRTOS\Demo\Common\Minimal) :     #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+vStartMessageBufferTasks in MessageBufferDemo.c (FreeRTOS\Demo\Common\Minimal) :     #endif /* configSUPPORT_STATIC_ALLOCATION */
+MessageBufferDemo.c (FreeRTOS\Demo\Common\Minimal) line 576 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+MessageBufferDemo.c (FreeRTOS\Demo\Common\Minimal) line 658 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+MessageBufferDemo.c (FreeRTOS\Demo\Common\Minimal) line 661 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+MessageBufferDemo.c (FreeRTOS\Demo\Common\Minimal) line 693 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+xAreMessageBufferTasksStillRunning in MessageBufferDemo.c (FreeRTOS\Demo\Common\Minimal) :     #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+xAreMessageBufferTasksStillRunning in MessageBufferDemo.c (FreeRTOS\Demo\Common\Minimal) :     #endif /* configSUPPORT_STATIC_ALLOCATION */
+queue.c (FreeRTOS\Source) line 121 :     #if ( ( configSUPPORT_STATIC_ALLOCATION == 1 ) && ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) )
+queue.c (FreeRTOS\Source) line 332 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+queue.c (FreeRTOS\Source) line 392 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+xQueueGenericCreate in queue.c (FreeRTOS\Source) :                 #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+xQueueGenericCreate in queue.c (FreeRTOS\Source) :                 #endif /* configSUPPORT_STATIC_ALLOCATION */
+queue.c (FreeRTOS\Source) line 460 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+queue.c (FreeRTOS\Source) line 555 : #if ( ( configUSE_MUTEXES == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 1 ) )
+queue.c (FreeRTOS\Source) line 733 : #if ( ( configUSE_COUNTING_SEMAPHORES == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 1 ) )
+vQueueDelete in queue.c (FreeRTOS\Source) :     #if ( ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 0 ) )
+vQueueDelete in queue.c (FreeRTOS\Source) :     #elif ( ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 1 ) )
+vQueueDelete in queue.c (FreeRTOS\Source) :     #else /* if ( ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 0 ) ) */
+queue.h (FreeRTOS\Source\include) line 234 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+queue.h (FreeRTOS\Source\include) line 236 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+queue.h (FreeRTOS\Source\include) line 1559 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+queue.h (FreeRTOS\Test\VeriFast\include\proof) line 145 :     #if ( ( configSUPPORT_STATIC_ALLOCATION == 1 ) && ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) )
+semphr.h (FreeRTOS\Source\include) line 227 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+semphr.h (FreeRTOS\Source\include) line 229 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+semphr.h (FreeRTOS\Source\include) line 797 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+semphr.h (FreeRTOS\Source\include) line 799 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+semphr.h (FreeRTOS\Source\include) line 942 : #if ( ( configSUPPORT_STATIC_ALLOCATION == 1 ) && ( configUSE_RECURSIVE_MUTEXES == 1 ) )
+semphr.h (FreeRTOS\Source\include) line 944 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+semphr.h (FreeRTOS\Source\include) line 1111 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+semphr.h (FreeRTOS\Source\include) line 1113 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+StaticAllocation.c (FreeRTOS\Demo\Common\Minimal) line 49 : /* Exclude the entire file if configSUPPORT_STATIC_ALLOCATION is 0. */
+StaticAllocation.c (FreeRTOS\Demo\Common\Minimal) line 50 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+StaticAllocation.c (FreeRTOS\Demo\Common\Minimal) line 1113 : /* Exclude the entire file if configSUPPORT_STATIC_ALLOCATION is 0. */
+StaticAllocation.c (FreeRTOS\Demo\Common\Minimal) line 1114 : #endif /* configSUPPORT_STATIC_ALLOCATION == 1 */
+StreamBufferDemo.c (FreeRTOS\Demo\Common\Minimal) line 118 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+StreamBufferDemo.c (FreeRTOS\Demo\Common\Minimal) line 128 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+vStartStreamBufferTasks in StreamBufferDemo.c (FreeRTOS\Demo\Common\Minimal) :     #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+vStartStreamBufferTasks in StreamBufferDemo.c (FreeRTOS\Demo\Common\Minimal) :     #endif /* configSUPPORT_STATIC_ALLOCATION */
+StreamBufferDemo.c (FreeRTOS\Demo\Common\Minimal) line 690 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+StreamBufferDemo.c (FreeRTOS\Demo\Common\Minimal) line 777 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+StreamBufferDemo.c (FreeRTOS\Demo\Common\Minimal) line 780 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+StreamBufferDemo.c (FreeRTOS\Demo\Common\Minimal) line 817 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+xAreStreamBufferTasksStillRunning in StreamBufferDemo.c (FreeRTOS\Demo\Common\Minimal) :     #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+xAreStreamBufferTasksStillRunning in StreamBufferDemo.c (FreeRTOS\Demo\Common\Minimal) :     #endif /* configSUPPORT_STATIC_ALLOCATION */
+stream_buffer.c (FreeRTOS\Source) line 307 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+stream_buffer.c (FreeRTOS\Source) line 382 : #endif /* ( configSUPPORT_STATIC_ALLOCATION == 1 ) */
+stream_buffer.h (FreeRTOS\Source\include) line 154 :  * configSUPPORT_STATIC_ALLOCATION must be set to 1 in FreeRTOSConfig.h for
+task.h (FreeRTOS\Source\include) line 148 :     #if ( ( portUSING_MPU_WRAPPERS == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 1 ) )
+task.h (FreeRTOS\Source\include) line 466 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+task.h (FreeRTOS\Source\include) line 474 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+task.h (FreeRTOS\Source\include) line 560 :  * Only available when configSUPPORT_STATIC_ALLOCATION is set to 1.
+task.h (FreeRTOS\Source\include) line 579 :  * definitions.  If configSUPPORT_STATIC_ALLOCATION is set to 1 the structure
+task.h (FreeRTOS\Source\include) line 593 :  * // configSUPPORT_STATIC_ALLOCATION is set to 1.  The PRIVILEGED_DATA macro can
+task.h (FreeRTOS\Source\include) line 639 : #if ( ( portUSING_MPU_WRAPPERS == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 1 ) )
+task.h (FreeRTOS\Source\include) line 1642 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+task.h (FreeRTOS\Source\include) line 1648 :      * configSUPPORT_STATIC_ALLOCATION is set.  For more information see this URI: https://www.FreeRTOS.org/a00110.html#configSUPPORT_STATIC_ALLOCATION
+prvWriteNameToBuffer in tasks.c (FreeRTOS\Source) : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+tasks.c (FreeRTOS\Source) line 628 : #if ( ( portUSING_MPU_WRAPPERS == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 1 ) )
+tasks.c (FreeRTOS\Source) line 672 : #endif /* ( portUSING_MPU_WRAPPERS == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 1 ) */
+vTaskStartScheduler in tasks.c (FreeRTOS\Source) :     #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+vTaskStartScheduler in tasks.c (FreeRTOS\Source) :     #else /* if ( configSUPPORT_STATIC_ALLOCATION == 1 ) */
+vTaskStartScheduler in tasks.c (FreeRTOS\Source) :     #endif /* configSUPPORT_STATIC_ALLOCATION */
+prvDeleteTCB in tasks.c (FreeRTOS\Source) :         #if ( ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 0 ) && ( portUSING_MPU_WRAPPERS == 0 ) )
+tasks.c (FreeRTOS\Source) line 4659 : #endif /* ( ( configGENERATE_RUN_TIME_STATS == 1 ) && ( configUSE_STATS_FORMATTING_FUNCTIONS > 0 ) && ( configSUPPORT_STATIC_ALLOCATION == 1 ) ) */
+prvReloadTimer in timers.c (FreeRTOS\Source) :             #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+prvReloadTimer in timers.c (FreeRTOS\Source) :             #else /* if ( configSUPPORT_STATIC_ALLOCATION == 1 ) */
+prvReloadTimer in timers.c (FreeRTOS\Source) :             #endif /* configSUPPORT_STATIC_ALLOCATION */
+timers.c (FreeRTOS\Source) line 313 :     #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+timers.c (FreeRTOS\Source) line 352 :     #endif /* configSUPPORT_STATIC_ALLOCATION */
+prvCheckForValidListAndQueue in timers.c (FreeRTOS\Source) :                 #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+prvCheckForValidListAndQueue in timers.c (FreeRTOS\Source) :                 #endif /* if ( configSUPPORT_STATIC_ALLOCATION == 1 ) */
+timers.h (FreeRTOS\Source\include) line 361 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+timers.h (FreeRTOS\Source\include) line 368 : #endif /* configSUPPORT_STATIC_ALLOCATION */
+timers.h (FreeRTOS\Source\include) line 1329 : #if ( configSUPPORT_STATIC_ALLOCATION == 1 )
+timers.h (FreeRTOS\Source\include) line 1336 :      * configSUPPORT_STATIC_ALLOCATION is set.  For more information see this URI: https://www.FreeRTOS.org/a00110.html#configSUPPORT_STATIC_ALLOCATION
+vQueueDelete.c (FreeRTOS\Test\VeriFast\queue) line 29 : #define configSUPPORT_STATIC_ALLOCATION     0
+vQueueDelete in vQueueDelete.c (FreeRTOS\Test\VeriFast\queue) :     #if ( ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 0 ) )
+vQueueDelete in vQueueDelete.c (FreeRTOS\Test\VeriFast\queue) :     #elif ( ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 1 ) )
+vQueueDelete in vQueueDelete.c (FreeRTOS\Test\VeriFast\queue) :     #else /* if ( ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 0 ) ) */
