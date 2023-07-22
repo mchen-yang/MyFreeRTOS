@@ -21,17 +21,25 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.14.0_KEIL
 Dialog DLL:      TCM.DLL V1.14.4.0
  
 <h2>Project:</h2>
-E:\QQ文件\研究生\资料\FreeRTOS\从0-1开始实现RTOS\doc_and_source_for_livestream\20220306_从0写RTOS_深入学习FreeRTOS和RT-Thread\源码\06_start_task\led_c.uvprojx
+E:\QQ文件\研究生\资料\liunx\01_FreeRTOS快速入门\1_项目源码\MyFreeRTOS\RTOS_任务切换\led_c.uvprojx
 Project File Date:  07/21/2023
 
 <h2>Output:</h2>
 Build target 'led_c'
+assembling start.s...
+start.s(113): warning: A1581W: Added 2 bytes of padding at address 0x62
+compiling uart.c...
+linking...
+.\Objects\led_c.axf: Warning: L6305W: Image does not have an entry point. (Not specified or not set due to multiple choices.)
+Program Size: Code=1408 RO-data=64 RW-data=12 ZI-data=3200  
+Finished: 0 information, 1 warning and 0 error messages.
+FromELF: creating hex file...
 After Build - User command #1: fromelf  --bin  --output=led.bin  Objects\led_c.axf
 After Build - User command #2: fromelf  --text  -a -c  --output=led.dis  Objects\led_c.axf
-".\Objects\led_c.axf" - 0 Error(s), 0 Warning(s).
+".\Objects\led_c.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
-  E:\QQ文件\研究生\资料\FreeRTOS\从0-1开始实现RTOS\doc_and_source_for_livestream\20220306_从0写RTOS_深入学习FreeRTOS和RT-Thread\源码\06_start_task\RTE
+  E:\QQ文件\研究生\资料\liunx\01_FreeRTOS快速入门\1_项目源码\MyFreeRTOS\RTOS_任务切换\RTE
   E:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0
 
 <h2>Collection of Component Files used:</h2>

@@ -119,25 +119,29 @@ ARM Macro Assembler    Page 2
    94 0000004A         SysTick_Handler_asm
                                PROC
    95 0000004A         ;ä¿æŠ¤å½“å‰ä»»åŠ¡çš„å†…å®¹
-   96 0000004A E92D 0FF0       STMDB            sp!, { r4 - r11 }
-   97 0000004E B500            STMDB            sp!, {lr}
+   96 0000004A E92D 0FF0       STMDB            SP!, { R4 - R11 }
+   97 0000004E B500            STMDB            SP!, {LR}
    98 00000050         
    99 00000050 4670            MOV              R0, LR      ; LRæ˜¯ä¸€ä¸ªç‰¹æ®Š
                                                             å€¼  
-  100 00000052 B001            ADD              SP, #4
-  101 00000054 4669            MOV              R1, SP
-  102 00000056         
-  103 00000056 F7FF FFFE       BL               SysTick_Handler
+  100 00000052 B001            ADD              SP, #4      ;æ˜¯ä¸æ˜¯æœ‰é—®é¢˜
+                                                            ï¼Œè¿™é‡ŒSPåº”ä¸åº
+                                                            ”è¯¥ç§»åŠ¨ï¼Œå¦‚æœ
+                                                            ä¸ç§»åŠ¨ï¼Œä½¿ç”¨A
 
 
 
 ARM Macro Assembler    Page 3 
 
 
-  104 0000005A         
-  105 0000005A BC01            LDMIA            sp!, { r0 }
+                                                            DD R1, SP, #4
+  101 00000054 4669            MOV              R1, SP
+  102 00000056         
+  103 00000056 F7FF FFFE       BL               SysTick_Handler
+  104 0000005A         ;è¿˜åŸ
+  105 0000005A BC01            LDMIA            SP!, { R0 }
   106 0000005C         
-  107 0000005C E8BD 0FF0       LDMIA            sp!, { r4 - r11 }
+  107 0000005C E8BD 0FF0       LDMIA            SP!, { R4 - R11 }
   108 00000060         
   109 00000060 4700            BX               R0
   110 00000062         
@@ -147,13 +151,12 @@ ARM Macro Assembler    Page 3
               00 00 20010000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=.\objects\start.d -o.\objects\start.o -IE:\QQÎÄ¼ş\ÑĞ¾¿Éú\×ÊÁÏ\Free
-RTOS\´Ó0-1¿ªÊ¼ÊµÏÖRTOS\doc_and_source_for_livestream\20220306_´Ó0Ğ´RTOS_ÉîÈëÑ§Ï
-°FreeRTOSºÍRT-Thread\Ô´Âë\06_start_task\RTE -I"E:\Program Files (x86)\Keil\ARM\
-PACK\Keil\STM32F1xx_DFP\2.2.0" -I"E:\Program Files (x86)\Keil\ARM\CMSIS\Include
-" -I"E:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Inclu
-de" --predefine="__UVISION_VERSION SETA 514" --predefine="STM32F10X_HD SETA 1" 
---list=.\listings\start.lst start.s
+ork --depend=.\objects\start.d -o.\objects\start.o -IE:\QQÎÄ¼ş\ÑĞ¾¿Éú\×ÊÁÏ\liun
+x\01_FreeRTOS¿ìËÙÈëÃÅ\1_ÏîÄ¿Ô´Âë\MyFreeRTOS\RTOS_ÈÎÎñÇĞ»»\RTE -I"E:\Program Fil
+es (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0" -I"E:\Program Files (x86)\Keil
+\ARM\CMSIS\Include" -I"E:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\
+2.2.0\Device\Include" --predefine="__UVISION_VERSION SETA 514" --predefine="STM
+32F10X_HD SETA 1" --list=.\listings\start.lst start.s
 
 
 

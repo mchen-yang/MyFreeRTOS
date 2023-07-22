@@ -93,18 +93,18 @@ StartTask_asm PROC
 
 SysTick_Handler_asm PROC
 				;保护当前任务的内容
-				STMDB sp!, { r4 - r11 }
-				STMDB sp!, {lr}
+				STMDB SP!, { R4 - R11 }
+				STMDB SP!, {LR}
 				
 				MOV R0, LR ; LR是一个特殊值		
-				ADD SP, #4
+				ADD SP, #4	;是不是有问题，这里SP应不应该移动，如果不移动，使用ADD R1, SP, #4
 				MOV R1, SP
 				
 				BL SysTick_Handler
+				;还原
+				LDMIA SP!, { R0 }
 				
-				LDMIA sp!, { r0 }
-				
-				LDMIA sp!, { r4 - r11 }
+				LDMIA SP!, { R4 - R11 }
 				
 				BX R0
 				
