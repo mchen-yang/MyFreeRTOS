@@ -57,7 +57,7 @@ ARM Macro Assembler    Page 1
    41 00000000                 IMPORT           SysTickInit
    42 00000000                 IMPORT           LedInit
    43 00000000         
-   44 00000000 F8DF D060       LDR              SP, =(0x20000000+0x10000)
+   44 00000000 F8DF D05C       LDR              SP, =(0x20000000+0x10000)
    45 00000004         
    46 00000004 F7FF FFFE       BL               SystemInit
    47 00000008         
@@ -87,7 +87,7 @@ ARM Macro Assembler    Page 2
    65 00000032 F7FF FFFE       BL               LedInit
    66 00000036         
    67 00000036         ;BL mymain
-   68 00000036 480C            LDR              R0, =mymain
+   68 00000036 480B            LDR              R0, =mymain
    69 00000038 4780            BLX              R0
    70 0000003A         
    71 0000003A                 ENDP
@@ -119,41 +119,44 @@ ARM Macro Assembler    Page 2
    94 0000004A         SysTick_Handler_asm
                                PROC
    95 0000004A         ;‰øùÊä§ÂΩìÂâç‰ªªÂä°ÁöÑÂÜÖÂÆπ
-   96 0000004A E92D 0FF0       STMDB            sp!, { r4 - r11 }
-   97 0000004E B500            STMDB            sp!, {lr}
+   96 0000004A E92D 0FF0       STMDB            SP!, { R4 - R11 } ;ÂÖàÂéãÂÖ•R11
+                                                            ÔºåÂÜçÂéãÂÖ•R10,...
+                                                            
+   97 0000004E B500            STMDB            SP!, {LR}
    98 00000050         
    99 00000050 4670            MOV              R0, LR      ; LRÊòØ‰∏Ä‰∏™ÁâπÊÆä
                                                             ÂÄº  
-  100 00000052 B001            ADD              SP, #4
-  101 00000054 4669            MOV              R1, SP
-  102 00000056         
-  103 00000056 F7FF FFFE       BL               SysTick_Handler
+  100 00000052 A901            ADD              R1, SP, #4
+  101 00000054         ;ADD SP, #4 ;ÊòØ‰∏çÊòØÊúâÈóÆÈ¢òÔºåËøôÈáåSPÂ∫î‰∏çÂ∫îËØ•Áß
 
 
 
 ARM Macro Assembler    Page 3 
 
 
-  104 0000005A         
-  105 0000005A BC01            LDMIA            sp!, { r0 }
-  106 0000005C         
-  107 0000005C E8BD 0FF0       LDMIA            sp!, { r4 - r11 }
-  108 00000060         
-  109 00000060 4700            BX               R0
-  110 00000062         
-  111 00000062                 ENDP
-  112 00000062         
-  113 00000062                 END
-              00 00 20010000 
+                       ªÂä®ÔºåÂ¶ÇÊûú‰∏çÁßªÂä®Ôºå‰ΩøÁî®ADD R1, SP, #4
+  102 00000054         ;MOV R1, SP
+  103 00000054         
+  104 00000054 F7FF FFFE       BL               SysTick_Handler
+  105 00000058         ;ËøòÂéü
+  106 00000058 BC01            LDMIA            SP!, { R0 }
+  107 0000005A         
+  108 0000005A E8BD 0FF0       LDMIA            SP!, { R4 - R11 }
+  109 0000005E         
+  110 0000005E 4700            BX               R0
+  111 00000060         
+  112 00000060                 ENDP
+  113 00000060         
+  114 00000060                 END
+              20010000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=.\objects\start.d -o.\objects\start.o -IE:\QQŒƒº˛\—–æø…˙\◊ ¡œ\Free
-RTOS\¥”0-1ø™ º µœ÷RTOS\doc_and_source_for_livestream\20220306_¥”0–¥RTOS_…Ó»Î—ßœ
-∞FreeRTOS∫ÕRT-Thread\‘¥¬Î\06_start_task\RTE -I"E:\Program Files (x86)\Keil\ARM\
-PACK\Keil\STM32F1xx_DFP\2.2.0" -I"E:\Program Files (x86)\Keil\ARM\CMSIS\Include
-" -I"E:\Program Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Inclu
-de" --predefine="__UVISION_VERSION SETA 514" --predefine="STM32F10X_HD SETA 1" 
---list=.\listings\start.lst start.s
+ork --depend=.\objects\start.d -o.\objects\start.o -IE:\QQŒƒº˛\—–æø…˙\◊ ¡œ\liun
+x\MyFreeRTOS\RTOS_»ŒŒÒ«–ªª\RTE -I"E:\Program Files (x86)\Keil\ARM\PACK\Keil\STM
+32F1xx_DFP\2.2.0" -I"E:\Program Files (x86)\Keil\ARM\CMSIS\Include" -I"E:\Progr
+am Files (x86)\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include" --predefi
+ne="__UVISION_VERSION SETA 514" --predefine="STM32F10X_HD SETA 1" --list=.\list
+ings\start.lst start.s
 
 
 
@@ -269,7 +272,7 @@ Symbol: SysTick_Handler
    Definitions
       At line 13 in file start.s
    Uses
-      At line 103 in file start.s
+      At line 104 in file start.s
 Comment: SysTick_Handler used once
 SystemInit 00000000
 

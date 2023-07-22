@@ -51,7 +51,7 @@ void create_task(task_function f, void *param, char *stack, int stack_len)
 	/* r12,lr */
 	top[12] = 0; /* r12 */
 	top[13] = 0; /* lr */
-	
+	  
 	/* 返回地址 */
 	top[14] = (int)f; /* 任务入口 */
 	
@@ -64,7 +64,15 @@ void create_task(task_function f, void *param, char *stack, int stack_len)
 
 void start_task(void)
 {
-	task_running = 1;
+	if(task_stacks[0] == 0){
+		task_running = 0;
+		printf("Error!!! Task is not creat!");
+		return ;
+	}
+	else{
+		task_running = 1;
+	}
+	
 	while (1);
 }
 
@@ -78,3 +86,4 @@ void set_task_stack(int task, int sp)
 	task_stacks[task] = sp;
 	
 }
+
