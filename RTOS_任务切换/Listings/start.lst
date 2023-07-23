@@ -137,17 +137,18 @@ ARM Macro Assembler    Page 3
                        �动，如果不移动，使用ADD R1, SP, #4
   102 00000054         ;MOV R1, SP
   103 00000054         
-  104 00000054 F7FF FFFE       BL               SysTick_Handler
-  105 00000058         ;还原
-  106 00000058 BC01            LDMIA            SP!, { R0 }
-  107 0000005A         
-  108 0000005A E8BD 0FF0       LDMIA            SP!, { R4 - R11 }
-  109 0000005E         
-  110 0000005E 4700            BX               R0
-  111 00000060         
-  112 00000060                 ENDP
-  113 00000060         
-  114 00000060                 END
+  104 00000054         
+  105 00000054 F7FF FFFE       BL               SysTick_Handler
+  106 00000058         ;还原
+  107 00000058 BC01            LDMIA            SP!, { R0 }
+  108 0000005A         
+  109 0000005A E8BD 0FF0       LDMIA            SP!, { R4 - R11 }
+  110 0000005E         
+  111 0000005E 4700            BX               R0
+  112 00000060         
+  113 00000060                 ENDP
+  114 00000060         
+  115 00000060                 END
               20010000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
@@ -272,7 +273,7 @@ Symbol: SysTick_Handler
    Definitions
       At line 13 in file start.s
    Uses
-      At line 104 in file start.s
+      At line 105 in file start.s
 Comment: SysTick_Handler used once
 SystemInit 00000000
 

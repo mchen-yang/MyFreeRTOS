@@ -29,10 +29,11 @@ void task_c(void *param)
 //		put_s_hex("sum = ", sum);
 //	}
 }
+
 int mymain()
 {
-//	create_task(task_a, (void*)'a', stack_a, 1024);
-//	create_task(task_a, (void*)'b', stack_b, 1024);
+	create_task(task_a, (void*)'a', stack_a, 1024);
+	create_task(task_a, (void*)'b', stack_b, 1024);
 	create_task(task_c, 0, stack_c, 1024);
 	start_task();
 	while(1);

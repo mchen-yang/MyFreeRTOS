@@ -31,21 +31,17 @@ task.h(7): warning:  #1295-D: Deprecated declaration next_task - give arg types
   int next_task();
 main.c(12): warning:  #767-D: conversion from pointer to smaller integer
         char c = (char)param;
-main.c(39): warning:  #111-D: statement is unreachable
+main.c(40): warning:  #111-D: statement is unreachable
         return 0;
-main.c(6): warning:  #177-D: variable "stack_a" was declared but never referenced
-  static char stack_a[1024] __attribute__ ((aligned (4)));;
-main.c(7): warning:  #177-D: variable "stack_b" was declared but never referenced
-  static char stack_b[1024] __attribute__ ((aligned (4)));;
-main.c: 5 warnings, 0 errors
+main.c: 3 warnings, 0 errors
 linking...
 .\Objects\led_c.axf: Warning: L6305W: Image does not have an entry point. (Not specified or not set due to multiple choices.)
-Program Size: Code=4212 RO-data=76 RW-data=28 ZI-data=3460  
+Program Size: Code=4252 RO-data=76 RW-data=28 ZI-data=3460  
 Finished: 0 information, 1 warning and 0 error messages.
 FromELF: creating hex file...
 After Build - User command #1: fromelf  --bin  --output=led.bin  Objects\led_c.axf
 After Build - User command #2: fromelf  --text  -a -c  --output=led.dis  Objects\led_c.axf
-".\Objects\led_c.axf" - 0 Error(s), 6 Warning(s).
+".\Objects\led_c.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   E:\QQ文件\研究生\资料\liunx\MyFreeRTOS\RTOS_任务切换\RTE
