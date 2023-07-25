@@ -36,6 +36,21 @@
 
 #define CRTP_IS_NULL_PACKET(P) ((P.header&0xF3)==0xF3)
 
+#define CRTP_TX_TASK_STACKSIZE        150
+#define CRTP_RX_TASK_STACKSIZE        (2* 150)
+#define CRTP_TX_TASK_NAME       "CRTP-TX"
+#define CRTP_RX_TASK_NAME       "CRTP-RX"
+#define CRTP_TX_TASK_PRI        2
+#define CRTP_RX_TASK_PRI        2
+#define M2T											pdMS_TO_TICKS
+
+#ifdef ASSERT
+#undef ASSERT
+#endif
+
+#define ASSERT(x)
+
+
 typedef enum {
   CRTP_PORT_CONSOLE          = 0x00,
   CRTP_PORT_PARAM            = 0x02,
@@ -46,6 +61,7 @@ typedef enum {
   CRTP_PORT_SETPOINT_GENERIC = 0x07,
   CRTP_PORT_SETPOINT_HL      = 0x08,
   CRTP_PORT_PLATFORM         = 0x0D,
+  CRTP_PORT_LED        		 	 = 0x0E,
   CRTP_PORT_LINK             = 0x0F,
 } CRTPPort;
 
@@ -67,6 +83,7 @@ typedef struct _CRTPPacket
           uint8_t reserved : 2;
 #endif
          };
+
       };
       uint8_t data[CRTP_MAX_DATA_SIZE]; //< Data
     };
