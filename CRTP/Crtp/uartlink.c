@@ -77,7 +77,7 @@ static int uartlinkSendPacket(CRTPPacket *p)
 
 	FILE* f = NULL;
 	//发送头部识别
-	fputc(p->size, f);
+	fputc(0x55, f);
 	//发送数据大小
   fputc(p->size, f);
 	//发送头->port, reserved, chanel
@@ -104,16 +104,20 @@ static void UARTParserPacket(void * params){
 	status = WAITING;
 	CRTPPacket p;
 	while(1){
+
 		xQueueReceive( crtpPacketStore, &c, portMAX_DELAY );
+
 		switch (status)
 			{
 			case WAITING:
 				if(c != 0x55){
 					status++;
+
 					p.size = c;
 					status++;
 				}			
 				break;
+
 			case GET_HEADER:
 				p.header = c;
 				i = 0;
@@ -123,10 +127,12 @@ static void UARTParserPacket(void * params){
 				
 				p.data[i++] = c;
 				if(i == p.size){
+
 					/*把packet打印出来*/
-					printf("The size = %d, the header = %d, the data = %s\r\n", p.size, p.header, p.data);
+//					printf("The size = %d, the header = %d, the data = %s\r\n", p.size, p.header, p.data);
 					
 					xQueueSend(crtpPacketDelivery, &p, portMAX_DELAY);
+
 					status = WAITING;		
 				}
 				break;
@@ -135,12 +141,15 @@ static void UARTParserPacket(void * params){
 }
 
 void SendUartDataInISR(const char c){
+
 	xQueueSendFromISR(crtpPacketStore, &c, NULL);
+
 }
 
 /*
  * Public functions
  */
+
 
 void uartlinkInit(void)
 {
@@ -151,7 +160,9 @@ void uartlinkInit(void)
 	crtpPacketStore = xQueueCreate(64, 1);
 
 
+
 	xTaskCreate(UARTParserPacket, "ParserPacket", 150, NULL, osPriorityNormal, xUartParserTask);
+
 	
   isInit = 1;
 }

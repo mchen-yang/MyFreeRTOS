@@ -344,7 +344,9 @@ static void DisplayWifiStatus(void)
  * -----------------------------------------------
  * 2021/10/16	     V1.0	  韦东山	      创建
  ***********************************************************************/
+
 void SmartHomeTask(void* para)
+
 {
 	char strJson[100];
 	InputEvent event;

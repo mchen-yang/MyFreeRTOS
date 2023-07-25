@@ -365,7 +365,7 @@
               <MiscControls>--gnu</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\ModuleDrivers;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../smartdevice/cal;../smartdevice/kal;../smartdevice/input;../smartdevice/unittest;../smartdevice/device;../smartdevice/device/display;../smartdevice/config;../smartdevice/fonts;../smartdevice/text;../smartdevice/net;../smartdevice/device/uart;../smartdevice/smarthome;..\Crtp</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\ModuleDrivers;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../smartdevice/cal;../smartdevice/kal;../smartdevice/input;../smartdevice/unittest;../smartdevice/device;../smartdevice/device/display;../smartdevice/config;../smartdevice/fonts;../smartdevice/text;../smartdevice/net;../smartdevice/device/uart;../smartdevice/smarthome;..\Crtp;..\Crtp\interface</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1463,6 +1463,21 @@
               <FileName>uartlink.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Crtp\uartlink.c</FilePath>
+            </File>
+            <File>
+              <FileName>crtp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Crtp\crtp.c</FilePath>
+            </File>
+            <File>
+              <FileName>crtpservice.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Crtp\crtpservice.c</FilePath>
+            </File>
+            <File>
+              <FileName>ledservice.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Crtp\ledservice.c</FilePath>
             </File>
           </Files>
         </Group>

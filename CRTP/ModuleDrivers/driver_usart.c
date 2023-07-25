@@ -7,6 +7,7 @@
 static volatile uint8_t txcplt_flag = 0;
 static volatile uint8_t rxcplt_flag = 0;
 
+
 //static volatile uint8_t rx_data = 0;
 
 void SendUartDataInISR(const char c);
@@ -14,6 +15,7 @@ void SendUartDataInISR(const char c);
 void EnableDebugIRQ(void)
 {
     HAL_NVIC_SetPriority(USART1_IRQn, 0xf, 0);
+
     HAL_NVIC_EnableIRQ(USART1_IRQn);
     
     __HAL_UART_ENABLE_IT(&huart1, UART_IT_TC | UART_IT_RXNE); 
@@ -62,7 +64,9 @@ void USART1_IRQHandler(void)
     {
         c = USART1->DR;
 				//唤醒任务：写入队列中
+
         SendUartDataInISR(c);
+
     }
     HAL_UART_IRQHandler(&huart1);
 }

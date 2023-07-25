@@ -23,6 +23,9 @@
 #include "task.h"
 #include "usart.h"
 #include "gpio.h"
+#include "crtp.h"
+#include "crtpservice.h"
+#include "ledservice.h"
 
 #include <smarthome.h>
 
@@ -52,7 +55,7 @@ ring_buffer test_buffer;
 
 /* USER CODE END 0 */
 void uartlinkInit(void);
-
+struct crtpLinkOperations * uartlinkGetLink(void);
 /**
   * @brief  The application entry point.
   * @retval int
@@ -107,8 +110,15 @@ int main(void)
   osKernelInitialize();  /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init();
 
-
+	/*链路层初始化*/
 	uartlinkInit();
+	crtpSetLink(uartlinkGetLink());
+	/*CRTP层初始化*/
+	crtpInit();
+
+	/*CRTP服务层初始化*/
+	crtpserviceInit();
+	ledserviceInit();
 //	UARTlink = uartlinkGetLink();
 
 //  xTaskCreate(SmartHomeTask, "smarthome", 200, NULL, osPriorityNormal, NULL);

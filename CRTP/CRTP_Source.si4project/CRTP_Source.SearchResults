@@ -1,0 +1,82 @@
+---- callbacks Matches (89 in 6 files) ----
+crtp.c (Crtp) line 80 : static volatile CrtpCallback callbacks[CRTP_NBR_OF_PORTS];
+crtpRxTask in crtp.c (Crtp) :         if (callbacks[p.port])
+crtpRxTask in crtp.c (Crtp) :           callbacks[p.port](&p);
+crtpRegisterPortCB in crtp.c (Crtp) :   callbacks[port] = cb;
+stm32f1xx_hal_dma.c (Drivers\STM32F1xx_HAL_Driver\Src) line 269 :   /* Clean all callbacks */
+stm32f1xx_hal_dma.c (Drivers\STM32F1xx_HAL_Driver\Src) line 684 :   * @brief Register callbacks
+stm32f1xx_hal_dma.c (Drivers\STM32F1xx_HAL_Driver\Src) line 737 :   * @brief UnRegister callbacks
+stm32f1xx_hal_gpio.c (Drivers\STM32F1xx_HAL_Driver\Src) line 557 :   * @brief  EXTI line detection callbacks.
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 103 :   allows the user to configure dynamically the driver callbacks.
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 117 :   These functions allow to register/unregister following callbacks:
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 148 : all interrupt callbacks are set to the corresponding weak functions:
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 153 :   functionalities in the Init / DeInit only when these callbacks are null
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 155 :     keep and use the user MspInit / MspDeInit callbacks(registered beforehand)
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 161 :     thus registered(user) MspInit / DeInit callbacks can be used during the Init / DeInit.
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 162 :   In that case first register the MspInit/MspDeInit user callbacks
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 167 :       not defined, the callback registration feature is not available and all callbacks
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 286 :     /* Reset interrupt callbacks to legacy weak callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 553 :   /* Set the DMA Period elapsed callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 669 :     /* Reset interrupt callbacks to legacy weak callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1067 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1089 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1111 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1132 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1310 :     /* Reset interrupt callbacks to legacy weak callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1707 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1729 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1750 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1771 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1949 :     /* Reset interrupt callbacks to legacy weak callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 2355 :       /* Set the DMA capture callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 2376 :       /* Set the DMA capture callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 2397 :       /* Set the DMA capture callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 2418 :       /* Set the DMA capture callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 2576 :     /* Reset interrupt callbacks to legacy weak callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 2978 :     /* Reset interrupt callbacks to legacy weak callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 3555 :       /* Set the DMA capture callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 3582 :       /* Set the DMA capture callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 3608 :       /* Set the DMA capture callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 3623 :       /* Set the DMA capture callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4460 :       /* Set the DMA Period elapsed callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4478 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4496 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4514 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4532 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4550 :       /* Set the DMA commutation callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4568 :       /* Set the DMA trigger callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4778 :       /* Set the DMA Period elapsed callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4796 :       /* Set the DMA capture callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4814 :       /* Set the DMA capture callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4832 :       /* Set the DMA capture callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4850 :       /* Set the DMA capture callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4868 :       /* Set the DMA commutation callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 4886 :       /* Set the DMA trigger callbacks */
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 7447 :   * @brief  Reset interrupt callbacks to the legacy weak callbacks.
+stm32f1xx_hal_tim.c (Drivers\STM32F1xx_HAL_Driver\Src) line 7454 :   /* Reset the TIM callback to the legacy weak callbacks */
+stm32f1xx_hal_tim_ex.c (Drivers\STM32F1xx_HAL_Driver\Src) line 163 :     /* Reset interrupt callbacks to legacy week callbacks */
+stm32f1xx_hal_tim_ex.c (Drivers\STM32F1xx_HAL_Driver\Src) line 890 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim_ex.c (Drivers\STM32F1xx_HAL_Driver\Src) line 911 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim_ex.c (Drivers\STM32F1xx_HAL_Driver\Src) line 932 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim_ex.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1350 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim_ex.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1371 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_tim_ex.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1392 :       /* Set the DMA compare callbacks */
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 72 :     allows the user to configure dynamically the driver callbacks.
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 76 :     Function @ref HAL_UART_RegisterCallback() allows to register following callbacks:
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 95 :     This function allows to reset following callbacks:
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 113 :     all callbacks are set to the corresponding weak (surcharged) functions:
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 117 :     and @ref HAL_UART_DeInit() only when these callbacks are null (not registered beforehand).
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 119 :     keep and use the user MspInit/MspDeInit callbacks (registered beforehand).
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 125 :     MspInit/DeInit callbacks can be used during the Init/DeInit.
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 126 :     In that case first register the MspInit/MspDeInit user callbacks
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 133 :     and weak (surcharged) callbacks are used.
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1063 :            The HAL_UART_TxCpltCallback(), HAL_UART_RxCpltCallback() user callbacks
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1570 :      to call the HAL UART API under callbacks HAL_UART_TxCpltCallback() / HAL_UART_RxCpltCallback():
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 1796 :   *         calling registered callbacks at half/end of reception. UART IDLE events are also used to consider
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 2080 :   /* If DMA Tx and/or DMA Rx Handles are associated to UART Handle, DMA Abort complete callbacks should be initialised
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 2581 :   * @brief  Tx Transfer completed callbacks.
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 2596 :   * @brief  Tx Half Transfer completed callbacks.
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 2611 :   * @brief  Rx Transfer completed callbacks.
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 2626 :   * @brief  Rx Half Transfer completed callbacks.
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 2641 :   * @brief  UART error callbacks.
+stm32f1xx_hal_uart.c (Drivers\STM32F1xx_HAL_Driver\Src) line 2953 :   * @brief  Initialize the callbacks to their default values.
